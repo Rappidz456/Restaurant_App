@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { verticalScale, horizontalScale } from "../../utils/ScaleSize";
 
 const styles = StyleSheet.create({
     container: {
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '700',
         letterSpacing: 1,
-        top: 50
+        top: verticalScale(60)
     },
     activeDotStyle: {
         width: 30.77,
@@ -24,8 +25,8 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     skipButton: {
-        left: 182,
-        bottom: 20
+        left: horizontalScale(180),
+        bottom: verticalScale(30)
     },
     skipButtonText: {
         color: '#F96B1B',
@@ -33,8 +34,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     doneButton: {
-        paddingRight: 113,
-        bottom: 100
+        paddingRight: horizontalScale(114),
+        bottom: verticalScale(100)
     },
     buttonStart: {
         width: 170,

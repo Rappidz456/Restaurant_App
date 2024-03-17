@@ -1,12 +1,15 @@
 //import liraries
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import OnBoardingData from '../../data/OnBoarding';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import styles from './Style';
+import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Boarding = () => {
+
+    const navigation = useNavigation();
 
     const renderItem = ({ item }) => {
         return (
@@ -28,7 +31,9 @@ const Boarding = () => {
     const OnDone = () => {
         return (
             <View style={styles.doneButton}>
-                <TouchableOpacity style={styles.buttonStart}>
+                <TouchableOpacity style={styles.buttonStart} onPress={() => {
+                    navigation.navigate('BottomStack')
+                }}>
                     <Text style={styles.buttonStartText}>Let’s Start!</Text>
                 </TouchableOpacity>
             </View>
