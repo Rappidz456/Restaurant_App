@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const .nn  v RestaurantNearby = () => {
+const RestaurantNearby = () => {
     return (
         <View style={styles.container}>
             <Text>MyComponent</Text>
