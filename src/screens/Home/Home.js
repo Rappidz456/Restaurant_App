@@ -1,6 +1,6 @@
 //import liraries
 import React from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, Pressable } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Pressable, ScrollView } from 'react-native';
 import { food } from '../../data/Data';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './Styles';
@@ -35,7 +35,8 @@ const Home = () => {
                     )
                 })}
             </View>
-            <View style={styles.imageView}>
+            <ScrollView>
+                <View style={styles.imageView}>
                 <Image source={require('../../assets/images/FoodPic.png')} style={styles.imageSize} />
             </View>
             <View style={styles.foodNameView}>
@@ -50,6 +51,7 @@ const Home = () => {
             <View style={styles.imageView2}>
                 <Image source={require('../../assets/images/FoodPic2.png')} style={styles.imageSize2} />
             </View>
+            </ScrollView>
         </View>
     );
 };
