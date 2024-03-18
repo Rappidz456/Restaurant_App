@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     doneButton: {
-        paddingRight: horizontalScale(114),
+        paddingRight: horizontalScale(106),
         bottom: verticalScale(100)
     },
     buttonStart: {
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     buttonStartText: {
+        textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '600',
         fontSize: 18,

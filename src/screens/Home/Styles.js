@@ -79,12 +79,12 @@ export default styles = StyleSheet.create({
         marginTop: verticalScale(30)
     },
     imageSize: {
-        width: 375,
+        width: 350,
         borderRadius: 10
     },
     foodNameView: {
-        marginLeft: horizontalScale(25),
-        marginTop: verticalScale(20),
+        marginLeft: horizontalScale(30),
+        marginTop: verticalScale(10),
         gap: 8
     },
     foodText: {
@@ -93,9 +93,14 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         letterSpacing: 0.5,
     },
+    foodDetails: {
+        color: '#484848', 
+        fontSize: 12, 
+        fontWeight: '400'
+    },
     ratingView : {
         flexDirection: 'row-reverse',
-        bottom: verticalScale(55),
+        bottom: verticalScale(60),
         right: horizontalScale(25),
         gap: 10
     },
@@ -108,10 +113,10 @@ export default styles = StyleSheet.create({
     imageView2: {
         alignItems: 'center',
         justifyContent: 'center',
-        bottom: verticalScale(8)
+        bottom: verticalScale(10)
     },
     imageSize2: {
-        width: 375,
+        width: 350,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10
     }

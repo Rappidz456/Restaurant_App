@@ -1,11 +1,10 @@
 //import liraries
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import OnBoardingData from '../../data/OnBoarding';
+import { OnBoardingData } from '../../data/Data';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import styles from './Style';
 import { useNavigation } from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient';
 
 const Boarding = () => {
 

@@ -1,18 +1,23 @@
 //import liraries
 import React from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
-import food from '../../data/FoodItems';
+import { View, Text, Image, TextInput, TouchableOpacity, Pressable } from 'react-native';
+import { food } from '../../data/Data';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './Styles';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <View style={styles.headerStyle}>
                 <Image source={require('../../assets/images/Icon.png')} />
                 <Text style={styles.headerText}>Hello! John Doe</Text>
                 <View style={styles.headerIcon}>
-                    <Image source={require('../../assets/images/Bell.png')} />
+                    <Pressable onPress={() => navigation.navigate('Notification')}>
+                    <Image source={require('../../assets/images/Bell.png')}/>
+                    </Pressable>
                 </View>
             </View>
             <View style={styles.inputView}>
@@ -35,8 +40,8 @@ const Home = () => {
             </View>
             <View style={styles.foodNameView}>
                 <Text style={styles.foodText}>ABC Pizzeria</Text>
-                <Text style={{ color: '#484848', fontSize: 12, fontWeight: '400' }}>Jalan ABC no 1, Kelapa Gading, Jakarta</Text>
-                <Text style={{ color: '#484848', fontSize: 12, fontWeight: '400' }}>081234567890</Text>
+                <Text style={styles.foodDetails}>Jalan ABC no 1, Kelapa Gading, Jakarta</Text>
+                <Text style={styles.foodDetails}>081234567890</Text>
             </View>
             <View style={styles.ratingView}>
                 <Text style={styles.ratingText}>5.0</Text>

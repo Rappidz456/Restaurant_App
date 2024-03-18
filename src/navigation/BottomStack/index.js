@@ -11,15 +11,18 @@ const TabNavigation = () => {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
+    
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           alignSelf: 'center',
           width: 353,
-          height: 70,
+          height: 60,
           bottom: verticalScale(20),
           backgroundColor: '#FFFFFF',
           borderRadius: 20,
+          position: 'absolute',
+          marginLeft: verticalScale(23),
           ...styles.shadow,
         },
         tabBarItemStyle: {
@@ -117,7 +120,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 30,
-    elevation: 5,
+    elevation: 10,
   },
 });
 
