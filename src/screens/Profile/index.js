@@ -1,27 +1,27 @@
 //import liraries
 import React from 'react';
-import {View, Text, Image, FlatList, Pressable} from 'react-native';
-import {verticalScale} from '../../utils/ScaleSize';
+import { View, Text, Image, FlatList, Pressable, ScrollView } from 'react-native';
+import { verticalScale } from '../../utils/ScaleSize';
 import { Settings } from '../../data/Data';
 import { useNavigation } from '@react-navigation/native';
-import  styles  from './Style';
+import styles from './Style';
 
 const Profile = () => {
   const Separator = () => <View style={styles.itemSeparator} />;
   const navigation = useNavigation();
-  const render = ({item}) => {
+  const render = ({ item }) => {
     return (
       <Pressable onPress={() => {
         item.id === 1 ? navigation.navigate('EditProfile') : null
       }}>
-        <View style = {styles.itemContainer}>
-        <View style = {{flexDirection: 'row', alignItems: 'center',}}>
-        <Image source={item.image}/>
-        <Text style = {styles.itemText}>{item.text}</Text>
+        <View style={styles.itemContainer}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+            <Image source={item.image} />
+            <Text style={styles.itemText}>{item.text}</Text>
+          </View>
         </View>
-      </View>
       </Pressable>
-      
+
     );
   };
 
@@ -31,7 +31,7 @@ const Profile = () => {
         <Text style={styles.profileText}>Profile</Text>
       </View>
       <View style={styles.imageView}>
-        <Image source={require('../../assets/images/Image.png')} style = {{width: 120, height: 120}}/>
+        <Image source={require('../../assets/images/Image.png')} style={{ width: 120, height: 120 }} />
         <Text style={styles.imageText}>John Doe</Text>
       </View>
       <View style={styles.textView}>
@@ -44,13 +44,16 @@ const Profile = () => {
       <View>
         <Separator />
       </View>
-      <View style = {{marginTop: verticalScale(10)}}>
-        <FlatList
-          data={Settings}
-          renderItem={render}
-          keyExtractor={item => item.id}
-        />
-      </View>
+      <ScrollView>
+        <View style={{ marginTop: verticalScale(10) }}>
+          <FlatList
+            data={Settings}
+            renderItem={render}
+            keyExtractor={item => item.id}
+          />
+        </View>
+      </ScrollView>
+
     </View>
   );
 };
