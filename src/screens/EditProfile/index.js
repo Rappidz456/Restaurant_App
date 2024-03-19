@@ -1,11 +1,17 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { horizontalScale, verticalScale } from '../../utils/ScaleSize'
 import { formData } from '../../data/Data'
+import { useNavigation } from '@react-navigation/native';
+import { Style } from './Styles';
 
 const EditProfile = () => {
+    const navigation = useNavigation();
+    const Separator = () => <View style={Style.itemSeparator} />;
     return (
         <View style={Style.container}>
+            <View>
+                <Separator/>
+            </View>
             <View style={Style.imageView}>
                 <Image source={require('../../assets/images/Image.png')} />
             </View>
@@ -22,7 +28,7 @@ const EditProfile = () => {
                 </View>
             </View>
             <View style = {Style.updateButton}>
-                <TouchableOpacity style = {Style.buttonStyle}>
+                <TouchableOpacity style = {Style.buttonStyle} onPress={() => navigation.navigate('SuccessPopup')}>
                     <Text style = {Style.buttonText}>Update Data</Text>
                 </TouchableOpacity>
             </View>
@@ -30,53 +36,6 @@ const EditProfile = () => {
     )
 }
 
-const Style = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#FFFFFF'
-    },
-    imageView: {
-        marginTop: verticalScale(100),
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    inputView: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: verticalScale(30),
-        gap: 20
-    },
-    TextInput: {
-        paddingLeft: horizontalScale(25),
-        borderWidth: 1,
-        borderColor: '#C9C9C9',
-        height: 40,
-        width: 350,
-        borderRadius: 10
-    },
-    labelStyle: {
-        color: '#484848',
-        fontSize: 15,
-        fontWeight: '600',
-        letterSpacing: 0.3
-    },
-    updateButton: {
-        alignItems: 'center',
-        marginTop: verticalScale(140)
-    },
-    buttonStyle: {
-        width: horizontalScale(350),
-        height: verticalScale(45),
-        borderRadius: 10,
-        backgroundColor: '#F96B1B',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    buttonText: {
-        color: '#FFFFFF',
-        fontSize: 16,
-        fontWeight: '600'
-    }
-})
+
 
 export default EditProfile

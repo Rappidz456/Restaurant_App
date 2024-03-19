@@ -44,7 +44,6 @@ const Profile = () => {
       <View>
         <Separator />
       </View>
-      <ScrollView>
         <View style={{ marginTop: verticalScale(10) }}>
           <FlatList
             data={Settings}
@@ -52,8 +51,6 @@ const Profile = () => {
             keyExtractor={item => item.id}
           />
         </View>
-      </ScrollView>
-
     </View>
   );
 };

@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StyleSheet, View} from 'react-native';
-import Home from '../../screens/Home/Home';
+import Home from '../../screens/Home';
 import RestaurantNearby from '../../screens/RestaurantNearby';
 import Profile from '../../screens/Profile';
 import {horizontalScale, verticalScale} from '../../utils/ScaleSize';

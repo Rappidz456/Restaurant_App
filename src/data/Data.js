@@ -93,3 +93,34 @@ export const formData = [
         placeholder: 'Jalan ABC no 1, Kelapa Gading, Jakarta'
     }
 ]
+
+export const JoinData = [
+    {
+        id: 1,
+        text: 'Upload Videos for review',
+        image: require('../assets/images/Group.png')
+    },
+    {
+        id: 2,
+        text: 'Get a verified badge on your profile',
+        image: require('../assets/images/mark.png')
+    },
+    {
+        id: 3,
+        text: 'Get acknowledged by restaurants',
+        image: require('../assets/images/Vector.png')
+    }
+]
+
+export const imageData = [
+    {
+        id: 1,
+        figure: 'Please upload your KTP here',
+        image: require('../assets/images/imageplus.png')
+    },
+    {   
+        id: 2,
+        figure: 'Please upload your selfie with KTP here',
+        image: require('../assets/images/imageplus.png')
+    }
+]

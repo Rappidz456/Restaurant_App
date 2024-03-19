@@ -10,10 +10,10 @@ const Notfication = () => {
       <View>
         <Line/>
       </View>
-    <View style = {{marginVertical: verticalScale(100), marginLeft: horizontalScale(17)}}>
+    <View style = {{marginVertical: verticalScale(100), marginLeft: horizontalScale(15)}}>
       {Notify.map((item, index) => {
         return(
-          <View key={index} style = {{flexDirection: 'row', alignItems: 'center', padding: verticalScale(10)}}>
+          <View key={index} style = {{flexDirection: 'row', alignItems: 'center', padding: verticalScale(15)}}>
             <Image source={item.image} style = {{width: 40, height: 40}}/>
              <Text style = {{
               color: '#828282', fontWeight: '400', fontSize: 14, 
