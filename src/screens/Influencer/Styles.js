@@ -12,9 +12,9 @@ export const style = StyleSheet.create({
     },
     itemSeparator: {
         height: 1,
-        top: verticalScale(73),
+        top: verticalScale(80),
         width: '100%',
-        borderWidth: 0.2,
+        borderWidth: 0.1,
         backgroundColor: '#C9C9C9',
       },
     inputText: {
@@ -40,7 +40,7 @@ export const style = StyleSheet.create({
         marginTop: verticalScale(35)
     },
     btnStyle: {
-        height: horizontalScale(40),
+        height: 40,
         width: verticalScale(353),
         backgroundColor: '#F96B1B',
         alignItems: 'center',
@@ -65,5 +65,19 @@ export const style = StyleSheet.create({
     },
     imageView: {
         marginTop: verticalScale(25)
+    },
+    account: {
+        marginTop: verticalScale(5),
+        marginLeft: horizontalScale(20)
+    },
+    texts: {
+        color: '#484848',
+        fontSize: 18,
+        fontWeight: '700'
+    },
+    reviewTexts: {
+        color: '#484848',
+        fontSize: 12,
+        fontWeight: '400'
     }
 })

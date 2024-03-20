@@ -61,11 +61,9 @@ export default styles = StyleSheet.create({
     buttonTouch: {
         width: 98,
         height: 33,
-        borderWidth: 0.5,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F96B1B',
-        borderColor: '#F96B1B',
         borderRadius: 12
     },
     buttonText: {

@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { JoinData } from '../../data/Data'
 import { useNavigation } from '@react-navigation/native'
+import { style } from './styles'
 
 const Join = () => {
     const navigation = useNavigation();

@@ -4,13 +4,13 @@ import { horizontalScale, verticalScale } from '../../utils/ScaleSize'
 export const Style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
     },
     itemSeparator: {
         height: 1,
         top: verticalScale(75),
         width: '100%',
-        borderWidth: 0.2,
+        borderWidth: 0.1,
         backgroundColor: '#C9C9C9',
       },
     imageView: {
@@ -32,6 +32,14 @@ export const Style = StyleSheet.create({
         width: 350,
         borderRadius: 10
     },
+    TextInput1: {
+        paddingLeft: horizontalScale(25),
+        borderWidth: 1,
+        borderColor: '#C9C9C9',
+        height: 103,
+        width: 350,
+        borderRadius: 10
+    },
     labelStyle: {
         marginLeft: verticalScale(4),
         color: '#484848',
@@ -40,12 +48,14 @@ export const Style = StyleSheet.create({
         letterSpacing: 0.3
     },
     updateButton: {
+        flex: 1,
         alignItems: 'center',
-        marginTop: verticalScale(140)
+        bottom: verticalScale(20),
+        justifyContent: 'flex-end'
     },
     buttonStyle: {
         width: horizontalScale(350),
-        height: verticalScale(45),
+        height: 40,
         borderRadius: 10,
         backgroundColor: '#F96B1B',
         alignItems: 'center',

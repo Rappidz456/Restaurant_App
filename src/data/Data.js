@@ -124,3 +124,45 @@ export const imageData = [
         image: require('../assets/images/imageplus.png')
     }
 ]
+
+export const UploadVideo = [
+    {
+        id: 1,
+        label: 'Video Title',
+        placeholder: 'Add your video title'
+    },
+    {
+        id: 2,
+        label: 'Restaurant',
+        placeholder: 'Choose the restaurant you’re reviewing'
+    },
+    {
+        id: 3,
+        label: 'Description',
+        placeholder: 'Add your video description'
+    },
+]
+
+export const DetailsData = [
+    {
+        id: 1,
+        name: 'Description'
+    },
+    {
+        id: 2,
+        name: 'Review'
+    },
+    {
+        id: 3,
+        name: 'Video'
+    },
+    {
+        id: 4,
+        name: 'Menu'
+    },
+    {
+        id: 5,
+        name: 'Items'
+    }
+]
+

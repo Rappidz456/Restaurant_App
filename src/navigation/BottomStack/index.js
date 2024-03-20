@@ -68,7 +68,7 @@ const TabNavigation = () => {
                     <Ionicons
                       name={'location-sharp'}
                       size={33}
-                      color={'#F96B1B'}
+                      color={['#F9A11B', '#F96B1B']}
                     />
                   </View>
                 ) : (

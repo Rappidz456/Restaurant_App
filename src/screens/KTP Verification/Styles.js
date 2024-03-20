@@ -7,9 +7,9 @@ export const style = StyleSheet.create({
     },
     itemSeparator: {
       height: 1,
-      top: verticalScale(90),
+      top: verticalScale(80),
       width: '100%',
-      borderWidth: 0.2,
+      borderWidth: 0.1,
       backgroundColor: '#C9C9C9',
     },
     imageContainer: {
@@ -37,7 +37,7 @@ export const style = StyleSheet.create({
     btnStyle: {
       width: verticalScale(353),
       borderRadius: 10,
-      height: horizontalScale(40),
+      height: 40,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#F96B1B'

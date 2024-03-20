@@ -42,7 +42,7 @@ export const style = StyleSheet.create({
     },
     btnStyle: {
         width: verticalScale(353),
-        height: horizontalScale(40),
+        height: 40,
         borderRadius: 10,
         borderWidth: 1,
         borderColor: '#F96B1B',

@@ -1,11 +1,20 @@
 //import liraries
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import Geolocation from '@react-native-community/geolocation';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 const RestaurantNearby = () => {
     return (
         <View style={styles.container}>
-            <Text>MyComponent</Text>
+            <View>
+                <MapView provider={PROVIDER_GOOGLE}
+                zoomEnabled = {true}
+                showsCompass = {false}
+                maxDelta={90}
+                />
+            </View>
         </View>
     );
 };
@@ -13,10 +22,11 @@ const RestaurantNearby = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        backgroundColor: 'white',
     },
+    map: {
+        ...StyleSheet.absoluteFillObject
+    }
 });
 
 export default RestaurantNearby;

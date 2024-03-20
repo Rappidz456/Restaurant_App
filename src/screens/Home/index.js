@@ -5,6 +5,7 @@ import { food } from '../../data/Data';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './Styles';
 import { useNavigation } from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Home = () => {
 
@@ -16,7 +17,7 @@ const Home = () => {
                 <Text style={styles.headerText}>Hello! John Doe</Text>
                 <View style={styles.headerIcon}>
                     <Pressable onPress={() => navigation.navigate('Notification')}>
-                    <Image source={require('../../assets/images/Bell.png')}/>
+                        <Image source={require('../../assets/images/Bell.png')} />
                     </Pressable>
                 </View>
             </View>
@@ -26,18 +27,21 @@ const Home = () => {
             <View style={styles.eatView}>
                 <Text style={styles.eatText}>What do you want to eat?</Text>
             </View>
-            <ScrollView horizontal = {true} style = {{flexGrow: 0}} showsHorizontalScrollIndicator = {false}>
-            <View style={styles.buttonView}>
-                {food.map((item, index) => {
-                    return (
-                        <TouchableOpacity key={index} style={styles.buttonTouch}>
-                            <Text style={styles.buttonText}>{item.name}</Text>
-                        </TouchableOpacity>
-                    )
-                })}
-            </View>
+            <ScrollView horizontal={true} style={{ flexGrow: 0 }} showsHorizontalScrollIndicator={false}>
+                <View style={styles.buttonView}>
+                    {food.map((item, index) => {
+                        return (
+
+                            <TouchableOpacity key={index} >
+                                <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={0} useAngle={true} style={styles.buttonTouch}>
+                                    <Text style={styles.buttonText}>{item.name}</Text>
+                                </LinearGradient>
+                            </TouchableOpacity>
+                        )
+                    })}
+                </View>
             </ScrollView>
-                <View style={styles.imageView}>
+            <View style={styles.imageView}>
                 <Image source={require('../../assets/images/FoodPic.png')} style={styles.imageSize} />
             </View>
             <View style={styles.foodNameView}>
