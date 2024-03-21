@@ -7,7 +7,7 @@ import { ratingData } from '../../data/Data'
 import String from '../../contants/Strings/Strings'
 
 const ReviewDetails = () => {
-    const [visible, setVisible] = useState(1)
+    const [visible, setVisible] = useState(1);
     return (
         <SafeAreaView style={styles.container}>
             <View>
@@ -24,11 +24,24 @@ const ReviewDetails = () => {
                     {DetailsData.map((item, index) => {
                         return (
                             <TouchableOpacity key={index} onPress={() => {
-                                item.id === 1 ? setVisible(1) : item.id === 2 ? setVisible(2) : item.id === 3 ? setVisible(3) : setVisible(false)
+                                item.id === 1 ?
+                                    setVisible(1) :
+                                    item.id === 2 ?
+                                        setVisible(2) :
+                                        item.id === 3 ?
+                                            setVisible(3) :
+                                            item.id === 4 ?
+                                                setVisible(4) :
+                                                setVisible(false)
                             }}>
-                                <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonTouch}>
-                                    <Text style={styles.buttonText}>{item.name}</Text>
+                                {visible == item.id ? (
+                                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonTouch}>
+                                        <Text style={styles.buttonText}>{item.name}</Text>
+                                    </LinearGradient>
+                                ) : <LinearGradient colors={['white', 'white']} angle={180} useAngle={true} style={styles.buttonTouch}>
+                                    <Text style={styles.buttonText1}>{item.name}</Text>
                                 </LinearGradient>
+                                }
                             </TouchableOpacity>
                         )
                     })}
@@ -42,9 +55,9 @@ const ReviewDetails = () => {
                             <Image source={require('../../assets/images/images.png')} />
                         </View>
                     </ScrollView>
-                        <View style={{ alignSelf: 'center', width: horizontalScale(375), height: 200, bottom: verticalScale(80) }}>
-                            <Text style={{ textAlign: 'justify', fontSize: 12, fontWeight: '400' }}>{String.Description}</Text>
-                        </View>
+                    <View style={{ alignSelf: 'center', width: horizontalScale(375), height: 200, bottom: verticalScale(80) }}>
+                        <Text style={{ textAlign: 'justify', fontSize: 12, fontWeight: '400' }}>{String.Description}</Text>
+                    </View>
                 </>
             )}
             {visible === 2 && (
@@ -88,9 +101,47 @@ const ReviewDetails = () => {
                 </>
             )}
             {visible === 3 && (
-                <View>
-                    <Text>buttonView</Text>
-                </View>
+                <ScrollView style={{ height: 0 }} showsVerticalScrollIndicator={false}>
+                    <View>
+                        <View style={{ marginTop: verticalScale(30), gap: 5 }}>
+                            <Image source={require('../../assets/images/restVideo.png')} />
+                            <Text style={{ marginLeft: verticalScale(20), color: '#484848', fontWeight: '700', fontSize: 20 }}>ABC Pizzeria</Text>
+                            <Text style={{ marginLeft: verticalScale(20) }}>Reviewer A</Text>
+                        </View>
+                        <View style={{ marginTop: verticalScale(30), gap: 5 }}>
+                            <Image source={require('../../assets/images/restVideo.png')} />
+                            <Text style={{ marginLeft: verticalScale(20), color: '#484848', fontWeight: '700', fontSize: 20 }}>ABC Pizzeria</Text>
+                            <Text style={{ marginLeft: verticalScale(20) }}>Reviewer B</Text>
+                        </View>
+                        <View style={{ marginTop: verticalScale(30), gap: 5 }}>
+                            <Image source={require('../../assets/images/restVideo.png')} />
+                            <Text style={{ marginLeft: verticalScale(20), color: '#484848', fontWeight: '700', fontSize: 20 }}>ABC Pizzeria</Text>
+                            <Text style={{ marginLeft: verticalScale(20) }}>Reviewer C</Text>
+                        </View>
+                    </View>
+                </ScrollView>
+            )}
+            {visible === 4 && (
+                <>
+                    <View style={{ marginLeft: horizontalScale(20), marginTop: verticalScale(30) }}>
+                        <Image source={require('../../assets/images/menu.png')} />
+                    </View>
+                    <View style={styles.downloadBtn}>
+                        <TouchableOpacity style={styles.downloadStyle}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', gap: horizontalScale(20) }}>
+                                <Image source={require('../../assets/images/download.png')} />
+                                <Text style={styles.downloadText}>Download PDF</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </>
+            )}
+            {visible === 5 && (
+                <>
+                    <View>
+
+                    </View>
+                </>
             )}
         </SafeAreaView>
     )
@@ -130,13 +181,19 @@ const styles = StyleSheet.create({
     buttonTouch: {
         width: verticalScale(120),
         height: 33,
+        borderColor: '#F96B1B',
+        borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#F96B1B',
         borderRadius: 12
     },
     buttonText: {
-        color: '#FFFFFF',
+        color: 'white',
+        fontWeight: '700',
+        fontSize: 14
+    },
+    buttonText1: {
+        color: '#F9A11B',
         fontWeight: '700',
         fontSize: 14
     },
@@ -144,7 +201,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: verticalScale(30)
+        marginTop: verticalScale(45)
     },
     gap: {
         marginHorizontal: horizontalScale(25)
@@ -229,6 +286,25 @@ const styles = StyleSheet.create({
         color: '#4B4B4B',
         fontSize: 12,
         fontWeight: '700'
+    },
+    downloadBtn: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        bottom: verticalScale(20)
+    },
+    downloadStyle: {
+        width: horizontalScale(353),
+        height: verticalScale(45),
+        borderRadius: 10,
+        backgroundColor: '#FF5E5E',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    downloadText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: '600'
     }
 })
 

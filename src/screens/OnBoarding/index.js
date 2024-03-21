@@ -34,7 +34,7 @@ const Boarding = () => {
                 <TouchableOpacity onPress={() => {
                     navigation.navigate('BottomStack')
                 }}>
-                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={0} useAngle={true} style={styles.buttonStart}>
+                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonStart}>
                         <Text style={styles.buttonStartText}>Let’s Start!</Text>
                     </LinearGradient>
                 </TouchableOpacity>

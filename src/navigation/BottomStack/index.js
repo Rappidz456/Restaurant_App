@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import Home from '../../screens/Home';
 import RestaurantNearby from '../../screens/RestaurantNearby';
 import Profile from '../../screens/Profile';
-import {horizontalScale, verticalScale} from '../../utils/ScaleSize';
+import {verticalScale} from '../../utils/ScaleSize';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -21,7 +21,7 @@ const TabNavigation = () => {
           backgroundColor: '#FFFFFF',
           borderRadius: 20,
           position: 'absolute',
-          marginLeft: verticalScale(23),
+          marginLeft: verticalScale(25),
           ...styles.shadow,
         },
         tabBarItemStyle: {

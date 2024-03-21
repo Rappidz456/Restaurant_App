@@ -50,7 +50,7 @@ export const Style = StyleSheet.create({
     updateButton: {
         flex: 1,
         alignItems: 'center',
-        bottom: verticalScale(20),
+        marginTop: verticalScale(70),
         justifyContent: 'flex-end'
     },
     buttonStyle: {

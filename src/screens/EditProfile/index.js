@@ -4,12 +4,14 @@ import { formData } from '../../data/Data'
 import { useNavigation } from '@react-navigation/native';
 import { Style } from './Styles';
 import LinearGradient from 'react-native-linear-gradient';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const EditProfile = () => {
     const navigation = useNavigation();
     const Separator = () => <View style={Style.itemSeparator} />;
     return (
         <View style={Style.container}>
+            <KeyboardAwareScrollView>
             <View>
                 <Separator />
             </View>
@@ -45,6 +47,7 @@ const EditProfile = () => {
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
+            </KeyboardAwareScrollView>
         </View>
     )
 }
