@@ -77,7 +77,8 @@ export default styles = StyleSheet.create({
         marginTop: verticalScale(30)
     },
     imageSize: {
-        width: 350,
+        width: horizontalScale(370),
+        height: verticalScale(200),
         borderRadius: 10
     },
     foodNameView: {
@@ -114,7 +115,8 @@ export default styles = StyleSheet.create({
         bottom: verticalScale(10)
     },
     imageSize2: {
-        width: 350,
+        width: horizontalScale(370),
+        height: verticalScale(200),
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10
     }

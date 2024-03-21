@@ -166,3 +166,26 @@ export const DetailsData = [
     }
 ]
 
+export const ratingData = [
+    {
+        id: 1,
+        number: '5.0'
+    },
+    {
+        id: 2,
+        number: '4.0'
+    },
+    {
+        id: 3,
+        number: '3.0'
+    },
+    {
+        id: 4,
+        number: '2.0'
+    },
+    {
+        id: 5,
+        number: '1.0'
+    }
+]
+

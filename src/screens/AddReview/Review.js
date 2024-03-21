@@ -24,7 +24,7 @@ const Review = () => {
             </View>
             <View style={styles.btnView}>
                 <TouchableOpacity onPress={() => navigation.navigate('Details')}>
-                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={0} useAngle={true} style = {styles.btnStyle}>
+                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style = {styles.btnStyle}>
                         <Text style = {styles.btnText}>Upload Review</Text>
                     </LinearGradient>
                 </TouchableOpacity>

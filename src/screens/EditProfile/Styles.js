@@ -36,8 +36,8 @@ export const Style = StyleSheet.create({
         paddingLeft: horizontalScale(25),
         borderWidth: 1,
         borderColor: '#C9C9C9',
-        height: 103,
-        width: 350,
+        height: verticalScale(128),
+        width: 353,
         borderRadius: 10
     },
     labelStyle: {

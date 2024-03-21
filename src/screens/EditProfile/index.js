@@ -40,7 +40,7 @@ const EditProfile = () => {
             </View>
             <View style={Style.updateButton}>
                 <TouchableOpacity onPress={() => navigation.navigate('SuccessPopup')}>
-                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={0} useAngle={true} style={Style.buttonStyle} >
+                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={Style.buttonStyle} >
                         <Text style={Style.buttonText}>Update Data</Text>
                     </LinearGradient>
                 </TouchableOpacity>

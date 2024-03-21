@@ -37,8 +37,10 @@ export const style = StyleSheet.create({
         marginLeft: verticalScale(17)
     },
     btnView: {
+        flex: 1,
         alignItems: 'center',
-        marginVertical: verticalScale(120)
+        justifyContent: 'flex-end',
+        bottom: verticalScale(20)
     },
     btnStyle: {
         width: verticalScale(353),
