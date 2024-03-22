@@ -3,32 +3,36 @@ import React from 'react'
 import { verticalScale, horizontalScale } from '../../utils/ScaleSize'
 import LinearGradient from 'react-native-linear-gradient'
 import { useNavigation } from '@react-navigation/native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const Review = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <View style={styles.imageView}>
-                <Image source={require('../../assets/images/FoodPic.png')} style={styles.imageStyle} />
-            </View>
-            <View style={styles.textView}>
-                <Text style={styles.text}>How was</Text>
-                <Text style={styles.text2}>ABC Pizzeria?</Text>
-            </View>
-            <View style = {styles.ratingView}>
-                <Image source={require('../../assets/images/rating.png')}/>
-            </View>
-            <View style={styles.inputView}>
-                <Text style={styles.labelStyle}>Your Review</Text>
-                <TextInput placeholder='Give your best review' style={styles.TextInput1} />
-            </View>
-            <View style={styles.btnView}>
-                <TouchableOpacity onPress={() => navigation.navigate('Details')}>
-                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style = {styles.btnStyle}>
-                        <Text style = {styles.btnText}>Upload Review</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
-            </View>
+            <KeyboardAwareScrollView>
+                <View style={styles.imageView}>
+                    <Image source={require('../../assets/images/FoodPic.png')} style={styles.imageStyle} />
+                </View>
+                <View style={styles.textView}>
+                    <Text style={styles.text}>How was</Text>
+                    <Text style={styles.text2}>ABC Pizzeria?</Text>
+                </View>
+                <View style={styles.ratingView}>
+                    <Image source={require('../../assets/images/rating.png')} />
+                </View>
+                <View style={styles.inputView}>
+                    <Text style={styles.labelStyle}>Your Review</Text>
+                    <TextInput placeholder='Give your best review' style={styles.TextInput1} />
+                </View>
+                <View style={styles.btnView}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+                        <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.btnStyle}>
+                            <Text style={styles.btnText}>Upload Review</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </View>
+            </KeyboardAwareScrollView>
+
         </View>
     )
 }
