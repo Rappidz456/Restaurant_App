@@ -1,10 +1,14 @@
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native'
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, TextInput, SafeAreaView, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import { verticalScale, horizontalScale } from '../../utils/ScaleSize'
 import { DetailsData } from '../../data/Data'
 import LinearGradient from 'react-native-linear-gradient'
 import { ratingData } from '../../data/Data'
 import String from '../../contants/Strings/Strings'
+import { fooditems } from '../../data/Data'
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height
 
 const ReviewDetails = () => {
     const [visible, setVisible] = useState(1);
@@ -32,10 +36,12 @@ const ReviewDetails = () => {
                                             setVisible(3) :
                                             item.id === 4 ?
                                                 setVisible(4) :
-                                                setVisible(false)
+                                                item.id === 5 ?
+                                                    setVisible(5) :
+                                                    setVisible(false)
                             }}>
                                 {visible == item.id ? (
-                                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonTouch}>
+                                    <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonTouch1}>
                                         <Text style={styles.buttonText}>{item.name}</Text>
                                     </LinearGradient>
                                 ) : <LinearGradient colors={['white', 'white']} angle={180} useAngle={true} style={styles.buttonTouch}>
@@ -139,7 +145,34 @@ const ReviewDetails = () => {
             {visible === 5 && (
                 <>
                     <View>
-
+                        <View style={styles.inputView}>
+                            <TextInput placeholder='Search here' style={styles.inputText} placeholderTextColor={'#9C9C9C'} />
+                        </View>
+                        <View style={{ marginTop: verticalScale(20) }}>
+                            {fooditems.map((item, index) => {
+                                return (
+                                    <>
+                                        <View key={index} style={{ flexDirection: 'row', alignItems: 'center', marginLeft: horizontalScale(20) }}>
+                                            <Image source={item.image} />
+                                            <View style={styles.fooditemsContainer}>
+                                                <View style={{ marginTop: verticalScale(23), gap: 5 }} key={index}>
+                                                    <Text style={styles.pizzaText}>{item.name}</Text>
+                                                    <Text style={styles.makeText}>{item.maker}</Text>
+                                                    <Text style={styles.makeText}>{item.pay}</Text>
+                                                </View>
+                                                <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', bottom: verticalScale(50), marginLeft: horizontalScale(30) }}>
+                                                    <TouchableOpacity >
+                                                        <LinearGradient colors={['#F9A11B', '#F96B1B']} useAngle={true} angle={180} style={{ height: 30, width: 100, alignItems: 'center', justifyContent: 'center', borderRadius: 10 }}>
+                                                            <Text style = {{color: 'white', fontSize: 16, fontWeight: '500'}}>Order</Text>
+                                                        </LinearGradient>
+                                                    </TouchableOpacity>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </>
+                                )
+                            })}
+                        </View>
                     </View>
                 </>
             )}
@@ -185,7 +218,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 12
+        borderRadius: 15
+    },
+    buttonTouch1: {
+        width: verticalScale(120),
+        height: 33,
+        borderColor: '#F96B1B',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15
     },
     buttonText: {
         color: 'white',
@@ -305,6 +346,43 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 16,
         fontWeight: '600'
+    },
+    inputView: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: verticalScale(25),
+    },
+    inputText: {
+        width: width / 1.15,
+        borderWidth: 0.5,
+        borderColor: '#F1F1F1',
+        height: height / 18,
+        borderRadius: 10,
+        backgroundColor: '#F1F1F1',
+        paddingLeft: horizontalScale(20),
+        fontSize: 15,
+        fontWeight: '400',
+        letterSpacing: 0.7,
+    },
+    fooditemsContainer: {
+        borderColor: '#C9C9C9',
+        height: 105,
+        borderTopWidth: 0,
+        borderBottomWidth: 1,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        width: 400,
+        marginLeft: horizontalScale(20)
+    },
+    pizzaText: {
+        color: '#4B4B4B',
+        fontSize: 16,
+        fontWeight: '600'
+    },
+    makeText: {
+        color: '#828282',
+        fontSize: 12,
+        fontWeight: '400'
     }
 })
 

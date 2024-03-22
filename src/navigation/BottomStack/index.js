@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import Home from '../../screens/Home';
 import RestaurantNearby from '../../screens/RestaurantNearby';
 import Profile from '../../screens/Profile';
-import {verticalScale} from '../../utils/ScaleSize';
+import {horizontalScale, verticalScale} from '../../utils/ScaleSize';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -12,16 +12,15 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarHideOnKeyboard : true,
         headerShown: false,
         tabBarStyle: {
           alignSelf: 'center',
-          width: 353,
+          width: horizontalScale(395),
           height: 60,
           bottom: verticalScale(20),
           backgroundColor: '#FFFFFF',
           borderRadius: 20,
-          position: 'absolute',
-          marginLeft: verticalScale(25),
           ...styles.shadow,
         },
         tabBarItemStyle: {
@@ -68,7 +67,7 @@ const TabNavigation = () => {
                     <Ionicons
                       name={'location-sharp'}
                       size={33}
-                      color={['#F9A11B', '#F96B1B']}
+                      color={'#F9A11B'}
                     />
                   </View>
                 ) : (

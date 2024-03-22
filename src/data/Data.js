@@ -189,3 +189,26 @@ export const ratingData = [
     }
 ]
 
+export const fooditems = [
+    {
+        id: 1,
+        name: 'Pepperoni Pizza',
+        image: require('../assets/images/fooditem1.png'),
+        maker: 'Made with pepperoni',
+        pay: 'Rp 200.000'
+    },
+    {
+        id: 2,
+        name: 'Mozzarella Pizza',
+        image: require('../assets/images/fooditem2.png'),
+        maker: 'Swim in mozzarella cheese',
+        pay: 'Rp 200.000'
+    },
+    {
+        id: 3,
+        name: 'Frankfurter Pizza',
+        image: require('../assets/images/fooditem3.png'),
+        maker: 'Juicy frankfurter sausage',
+        pay: 'Rp 200.000'
+    }
+]

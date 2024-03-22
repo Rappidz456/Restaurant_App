@@ -23,7 +23,7 @@ const AppWrapper = () => {
                 headerShown: false,
                 headerTintColor: '#F9A11B',
                 headerTransparent: true,
-            }}initialRouteName='Details'>
+            }}>
                 <Stack.Screen name='Splash' component={Splash} />
                 <Stack.Screen name='OnBoarding' component={Boarding} />
                 <Stack.Screen name='BottomStack' component={TabNavigation} />

@@ -18,8 +18,8 @@ export const style = StyleSheet.create({
     modalView: {
         borderWidth: 0.7,
         borderColor: 'white',
-        height: 350,
-        width: 350,
+        height: 300,
+        width: horizontalScale(300),
         borderRadius: 20,
         alignSelf: 'center',
         backgroundColor: 'white'

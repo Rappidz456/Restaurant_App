@@ -29,7 +29,7 @@ export const Style = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#C9C9C9',
         height: 40,
-        width: 350,
+        width: horizontalScale(353),
         borderRadius: 10
     },
     TextInput1: {
@@ -37,7 +37,7 @@ export const Style = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#C9C9C9',
         height: verticalScale(128),
-        width: 353,
+        width: horizontalScale(353),
         borderRadius: 10
     },
     labelStyle: {

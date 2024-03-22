@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         gap: 10
     },
     labelStyle: {
-        marginLeft: horizontalScale(25),
+        marginLeft: horizontalScale(30),
         alignSelf: 'flex-start',
         color: '#484848',
         fontSize: 15,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#C9C9C9',
         height: 128,
-        width: 350,
+        width: horizontalScale(353),
         borderRadius: 10
     },
     btnView: {
