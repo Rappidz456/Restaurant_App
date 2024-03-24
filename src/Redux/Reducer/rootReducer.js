@@ -1,0 +1,6 @@
+import reducer from './reducer';
+import { combineReducers } from '@reduxjs/toolkit';
+
+export default combineReducers({
+    reducer
+})

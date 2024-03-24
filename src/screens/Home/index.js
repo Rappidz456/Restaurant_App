@@ -31,7 +31,6 @@ const Home = () => {
                 <View style={styles.buttonView}>
                     {food.map((item, index) => {
                         return (
-
                             <TouchableOpacity key={index} >
                                 <LinearGradient colors={['#F9A11B', '#F96B1B']} angle={180} useAngle={true} style={styles.buttonTouch}>
                                     <Text style={styles.buttonText}>{item.name}</Text>

@@ -1,27 +1,28 @@
 //import liraries
 import React from 'react';
-import { View, Text, Image, FlatList, Pressable, ScrollView } from 'react-native';
-import { verticalScale } from '../../utils/ScaleSize';
-import { Settings } from '../../data/Data';
-import { useNavigation } from '@react-navigation/native';
+import {View, Text, Image, FlatList, Pressable, ScrollView} from 'react-native';
+import {verticalScale} from '../../utils/ScaleSize';
+import {Settings} from '../../data/Data';
+import {useNavigation} from '@react-navigation/native';
 import styles from './Style';
+import {connect} from 'react-redux';
 
 const Profile = () => {
   const Separator = () => <View style={styles.itemSeparator} />;
   const navigation = useNavigation();
-  const render = ({ item }) => {
+  const render = ({item}) => {
     return (
-      <Pressable onPress={() => {
-        item.id === 1 ? navigation.navigate('EditProfile') : null
-      }}>
+      <Pressable
+        onPress={() => {
+          item.id === 1 ? navigation.navigate('EditProfile') : null;
+        }}>
         <View style={styles.itemContainer}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image source={item.image} />
             <Text style={styles.itemText}>{item.text}</Text>
           </View>
         </View>
       </Pressable>
-
     );
   };
 
@@ -31,8 +32,11 @@ const Profile = () => {
         <Text style={styles.profileText}>Profile</Text>
       </View>
       <View style={styles.imageView}>
-        <Image source={require('../../assets/images/Image.png')} style={{ width: 120, height: 120 }} />
-        <Text style={styles.imageText}>John Doe</Text>
+        <Image
+          source={require('../../assets/images/Image.png')}
+          style={{width: 120, height: 120}}
+        />
+        <Text style={styles.imageText}>john Doe</Text>
       </View>
       <View style={styles.textView}>
         <Text style={styles.userText}>Normal User</Text>
@@ -44,17 +48,19 @@ const Profile = () => {
       <View>
         <Separator />
       </View>
-        <View style={{ marginTop: verticalScale(10) }}>
-          <FlatList
-            data={Settings}
-            renderItem={render}
-            keyExtractor={item => item.id}
-          />
-        </View>
+      <View style={{marginTop: verticalScale(10)}}>
+        <FlatList
+          data={Settings}
+          renderItem={render}
+          keyExtractor={item => item.id}
+        />
+      </View>
     </View>
   );
 };
 
+const mapStateToProps = state => ({
+  userData: state.userData,
+});
 
-
-export default Profile;
+export default connect(mapStateToProps)(Profile);

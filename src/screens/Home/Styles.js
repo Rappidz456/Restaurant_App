@@ -93,8 +93,8 @@ export default styles = StyleSheet.create({
         letterSpacing: 0.5,
     },
     foodDetails: {
-        color: '#484848', 
-        fontSize: 12, 
+        color: '#484848',
+        fontSize: 12,
         fontWeight: '400'
     },
     ratingView : {
@@ -112,7 +112,7 @@ export default styles = StyleSheet.create({
     imageView2: {
         alignItems: 'center',
         justifyContent: 'center',
-        bottom: verticalScale(10)
+        // bottom: verticalScale(10)
     },
     imageSize2: {
         width: horizontalScale(370),
