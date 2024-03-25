@@ -1,23 +1,28 @@
-import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
-import {formData} from '../../data/Data';
-import {Style} from './Styles';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { Style } from './Styles';
 import LinearGradient from 'react-native-linear-gradient';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {useDispatch} from 'react-redux';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch } from 'react-redux';
 import action from '../../Redux/Action/action';
 import { useNavigation } from '@react-navigation/native';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const EditProfile = () => {
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-  const navigation = useNavigation();
 
   const setdata = () => {
     const userData = {
       name: name,
     };
+    dispatch(action(userData))
+    if(userData == null){
+      console.log("Null")
+    }
+    else{
+      console.log('Not null')
+    }
   };
 
   const Separator = () => <View style={Style.itemSeparator} />;
@@ -31,33 +36,31 @@ const EditProfile = () => {
           <Image source={require('../../assets/images/Image.png')} />
         </View>
         <View style={Style.inputView}>
-          <View style={{gap: 20}}>
-            {formData.map((item, index) => {
-              return (
-                <View key={index} style={{gap: 10}}>
-                  {item.id <= 3 && (
-                    <>
-                      <Text style={Style.labelStyle}>{item.label}</Text>
-                      <TextInput
-                        placeholder={item.placeholder}
-                        style={Style.TextInput}
-                        onChangeText={text => setName(text)}
-                        value={name}
-                      />
-                    </>
-                  )}
-                  {item.id === 4 && (
-                    <>
-                      <Text style={Style.labelStyle}>{item.label}</Text>
-                      <TextInput
-                        placeholder={item.placeholder}
-                        style={Style.TextInput1}
-                      />
-                    </>
-                  )}
-                </View>
-              );
-            })}
+          <View style={{ gap: 20 }}>
+            <View style={{ gap: 15 }}>
+              <Text style={Style.labelStyle}>Name</Text>
+              <TextInput
+                placeholder='name'
+                style={Style.TextInput}
+                onChangeText={text => setName(text)}
+                value={name}
+              />
+              <Text style={Style.labelStyle}>Number</Text>
+              <TextInput
+                placeholder='Number'
+                style={Style.TextInput}
+              />
+              <Text style={Style.labelStyle}>Email</Text>
+              <TextInput
+                placeholder='Email'
+                style={Style.TextInput}
+              />
+              <Text style={Style.labelStyle}>Address</Text>
+              <TextInput
+                placeholder='Address'
+                style={Style.TextInput1}
+              />
+            </View>
           </View>
         </View>
         <View style={Style.updateButton}>
