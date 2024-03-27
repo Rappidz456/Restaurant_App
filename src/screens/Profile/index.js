@@ -1,15 +1,24 @@
 //import liraries
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, Image, FlatList, Pressable, ScrollView} from 'react-native';
 import {verticalScale} from '../../utils/ScaleSize';
 import {Settings} from '../../data/Data';
 import {useNavigation} from '@react-navigation/native';
 import styles from './Style';
-import {connect} from 'react-redux';
+import { useIsFocused } from '@react-navigation/native';
 
-const Profile = () => {
-  const Separator = () => <View style={styles.itemSeparator} />;
+const Profile = props => {
+  const [userData, setUserData] = useState(props?.userData)
+  const Separator = () => <View style={styles.itemSeparator} />
   const navigation = useNavigation();
+  const isFocus = useIsFocused();
+
+  useEffect(() => {
+    if(isFocus){
+      setUserData(props.userData)
+    }
+  }, [isFocus])
+
   const render = ({item}) => {
     return (
       <Pressable
@@ -36,7 +45,7 @@ const Profile = () => {
           source={require('../../assets/images/Image.png')}
           style={{width: 120, height: 120}}
         />
-        <Text style={styles.imageText}>john Doe</Text>
+        <Text style={styles.imageText}>{userData?.first_Name}</Text>
       </View>
       <View style={styles.textView}>
         <Text style={styles.userText}>Normal User</Text>
@@ -59,8 +68,18 @@ const Profile = () => {
   );
 };
 
-const mapStateToProps = state => ({
-  userData: state.userData,
-});
+const mapStateToProps = state => {
+  return {
+    userData: state.authData.userData,
+  };
+};
 
-export default connect(mapStateToProps)(Profile);
+const mapDispatchToProps = dispatch => {
+  return {
+    onSetUserToken: data => {
+      dispatch(setAuthToken(data));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
