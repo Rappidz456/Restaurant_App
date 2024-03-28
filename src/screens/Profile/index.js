@@ -1,4 +1,5 @@
 //import liraries
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import {View, Text, Image, FlatList, Pressable, ScrollView} from 'react-native';
 import {verticalScale} from '../../utils/ScaleSize';
@@ -20,13 +21,27 @@ const Profile = props => {
   }, [isFocus])
 
   const render = ({item}) => {
+=======
+import React from 'react';
+import { View, Text, Image, FlatList, Pressable, ScrollView } from 'react-native';
+import { verticalScale } from '../../utils/ScaleSize';
+import { Settings } from '../../data/Data';
+import { useNavigation } from '@react-navigation/native';
+import styles from './Style';
+import { connect } from 'react-redux';
+
+const Profile = ({ userData }) => {
+  const Separator = () => <View style={styles.itemSeparator} />;
+  const navigation = useNavigation();
+  const render = ({ item }) => {
+>>>>>>> b6e546a20ea7a1a8cb004fdd890dfcd53af31e3e
     return (
       <Pressable
         onPress={() => {
           item.id === 1 ? navigation.navigate('EditProfile') : null;
         }}>
         <View style={styles.itemContainer}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image source={item.image} />
             <Text style={styles.itemText}>{item.text}</Text>
           </View>
@@ -43,9 +58,16 @@ const Profile = props => {
       <View style={styles.imageView}>
         <Image
           source={require('../../assets/images/Image.png')}
-          style={{width: 120, height: 120}}
+          style={{ width: 120, height: 120 }}
         />
+<<<<<<< HEAD
         <Text style={styles.imageText}>{userData?.first_Name}</Text>
+=======
+        {userData ? (
+          <Text style={styles.imageText}>{userData.name}</Text>
+        ) : <Text style={styles.imageText}>john Doe</Text>
+        }
+>>>>>>> b6e546a20ea7a1a8cb004fdd890dfcd53af31e3e
       </View>
       <View style={styles.textView}>
         <Text style={styles.userText}>Normal User</Text>
@@ -57,7 +79,7 @@ const Profile = props => {
       <View>
         <Separator />
       </View>
-      <View style={{marginTop: verticalScale(10)}}>
+      <View style={{ marginTop: verticalScale(10) }}>
         <FlatList
           data={Settings}
           renderItem={render}

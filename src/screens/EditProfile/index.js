@@ -5,6 +5,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import action from '../../Redux/Action/action';
 
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { Style } from './Styles';
+import LinearGradient from 'react-native-linear-gradient';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch } from 'react-redux';
+import action from '../../Redux/Action/action';
+import { useNavigation } from '@react-navigation/native';
+import { connect } from 'react-redux';
+
 const EditProfile = () => {
   const [isDataChanged, setIsDataChanged] = useState(false);
   const [name, setName] = useState('');
@@ -18,12 +28,25 @@ const EditProfile = () => {
       setIsDataChanged(true)
     }
     console.log(data);
+  const dispatch = useDispatch();
+
+  const setdata = () => {
+    const userData = {
+      name: name,
+    };
+    dispatch(action(userData))
+    if(userData == null){
+      console.log("Null")
+    }
+    else{
+      console.log('Not null')
+    }
   };
 
   const Separator = () => <View style={Style.itemSeparator} />;
   return (
+    <>
     <View style={Style.container}>
-      <KeyboardAwareScrollView>
         <View>
           <Separator />
         </View>
@@ -36,9 +59,31 @@ const EditProfile = () => {
               <Text style={Style.labelStyle}>Name</Text>
               <TextInput
                 placeholder="Name"
+
+          <View style={{ gap: 20 }}>
+            <View style={{ gap: 15 }}>
+              <Text style={Style.labelStyle}>Name</Text>
+              <TextInput
+                placeholder='name'
                 style={Style.TextInput}
                 onChangeText={text => setName(text)}
                 value={name}
+              />
+
+              <Text style={Style.labelStyle}>Number</Text>
+              <TextInput
+                placeholder='Number'
+                style={Style.TextInput}
+              />
+              <Text style={Style.labelStyle}>Email</Text>
+              <TextInput
+                placeholder='Email'
+                style={Style.TextInput}
+              />
+              <Text style={Style.labelStyle}>Address</Text>
+              <TextInput
+                placeholder='Address'
+                style={Style.TextInput1}
               />
             </View>
           </View>
@@ -54,8 +99,8 @@ const EditProfile = () => {
             </LinearGradient>
           </TouchableOpacity>
         </View>
-      </KeyboardAwareScrollView>
     </View>
+    </>
   );
 };
 
